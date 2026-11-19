@@ -16,6 +16,7 @@ if (!$data || !isset($data['proposals'])) {
 }
 
 $proposals = $data['proposals'];
+require_once __DIR__ . '/similarity.php';
 
 $search = trim($_GET['search'] ?? '');
 $language = $_GET['language'] ?? 'all';
@@ -250,7 +251,33 @@ footer {
                     <strong>Indonesian reference:</strong><br>
                     <?= e($item['indonesian_gloss']) ?>
                 </div>
+                
+<?php
+$similarItems = getSimilarProposals($item, $proposals, 2);
+?>
 
+<?php if (!empty($similarItems)): ?>
+    <div class="gloss" style="margin-top:12px;">
+        <strong>Potentially Related Proposals</strong>
+
+        <?php foreach ($similarItems as $similar): ?>
+            <div style="margin-top:10px;">
+                <strong><?= e($similar['id']) ?></strong>
+                — <?= e($similar['original_text']) ?>
+
+                <span class="tag">
+                    <?= e($similar['similarity_score']) ?>% lexical overlap
+                </span>
+            </div>
+        <?php endforeach; ?>
+
+        <small>
+            Experimental suggestions based on shared Indonesian
+            reference words. Human review is required.
+        </small>
+    </div>
+<?php endif; ?>
+                
                 <div class="tags">
                     <span class="tag">
                         <?= e($item['language_name']) ?>
