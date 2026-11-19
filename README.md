@@ -69,8 +69,8 @@ This repository currently contains the project's initial documentation and devel
 - Linguistic diversity and inclusion
 - Community ownership and human oversight
 - Transparency and responsible AI
-- Open-source development
-- Public-interest technology
+- Open source development
+- Public interest technology
 
 ## Open Development
 
