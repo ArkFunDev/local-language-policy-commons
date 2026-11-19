@@ -4,7 +4,7 @@
 
 **Purpose :** Provide an overview of multilingual policy proposals.
 
-Planned interface:
+Planned interface :
 - Project title and navigation
 - Search proposals
 - Browse proposals by topic
@@ -47,7 +47,7 @@ Similarity suggestions are exploratory and do not represent automatic policy ran
 
 ## 5. Community Review
 
-**Purpose:** Enable community members to validate automated suggestions.
+**Purpose :** Enable community members to validate automated suggestions.
 
 Planned interface :
 - Review suggested topic groupings
