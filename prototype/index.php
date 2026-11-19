@@ -186,6 +186,11 @@ footer {
 </style>
 </head>
 
+<p>
+    <a href="dashboard.php">Project Dashboard</a> |
+    <a href="review.php">Community Review</a>
+</p>
+    
 <body>
 
 <header>
