@@ -46,9 +46,13 @@ The final technology choices will be refined through research and collaboration 
 ## Development Roadmap
 
 | Phase | Focus
+
 | Q1    | Research, collaboration, and system design
+
 | Q2    | MediaWiki integration and core development
+
 | Q3    | Topic similarity and human review
+
 | Q4    | Community testing, validation, and open release
 
 ## Current Status
