@@ -1,0 +1,69 @@
+
+{
+  "dataset_name": "Local Language Policy Commons Demo",
+  "version": "0.1.0",
+  "description": "Synthetic multilingual policy proposal examples for development and testing.",
+  "notice": "All entries are fictional examples, not actual community submissions.",
+  "proposals": [
+    {
+      "id": "P001",
+      "language": "id",
+      "language_name": "Indonesian",
+      "original_text": "Masyarakat desa membutuhkan layanan kesehatan yang lebih dekat dan terjangkau.",
+      "indonesian_gloss": "Masyarakat desa membutuhkan layanan kesehatan yang lebih dekat dan terjangkau.",
+      "suggested_topic": "healthcare_access",
+      "review_status": "unreviewed",
+      "is_synthetic": true
+    },
+    {
+      "id": "P002",
+      "language": "jv",
+      "language_name": "Javanese",
+      "original_text": "Warga desa butuh layanan kesehatan sing luwih cedhak lan terjangkau.",
+      "indonesian_gloss": "Warga desa membutuhkan layanan kesehatan yang lebih dekat dan terjangkau.",
+      "suggested_topic": "healthcare_access",
+      "review_status": "unreviewed",
+      "is_synthetic": true
+    },
+    {
+      "id": "P003",
+      "language": "su",
+      "language_name": "Sundanese",
+      "original_text": "Warga desa peryogi palayanan kasehatan anu langkung caket sareng biaya anu kahontal.",
+      "indonesian_gloss": "Warga desa membutuhkan layanan kesehatan yang lebih dekat dan terjangkau.",
+      "suggested_topic": "healthcare_access",
+      "review_status": "unreviewed",
+      "is_synthetic": true
+    },
+    {
+      "id": "P004",
+      "language": "id",
+      "language_name": "Indonesian",
+      "original_text": "Anak-anak di desa membutuhkan akses internet yang lebih mudah untuk belajar.",
+      "indonesian_gloss": "Anak-anak di desa membutuhkan akses internet yang lebih mudah untuk belajar.",
+      "suggested_topic": "digital_education",
+      "review_status": "unreviewed",
+      "is_synthetic": true
+    },
+    {
+      "id": "P005",
+      "language": "jv",
+      "language_name": "Javanese",
+      "original_text": "Bocah-bocah ing desa perlu akses internet sing luwih gampang kanggo sinau.",
+      "indonesian_gloss": "Anak-anak di desa membutuhkan akses internet yang lebih mudah untuk belajar.",
+      "suggested_topic": "digital_education",
+      "review_status": "unreviewed",
+      "is_synthetic": true
+    },
+    {
+      "id": "P006",
+      "language": "su",
+      "language_name": "Sundanese",
+      "original_text": "Barudak di desa peryogi akses internet anu langkung gampang pikeun diajar.",
+      "indonesian_gloss": "Anak-anak di desa membutuhkan akses internet yang lebih mudah untuk belajar.",
+      "suggested_topic": "digital_education",
+      "review_status": "unreviewed",
+      "is_synthetic": true
+    }
+  ]
+}
