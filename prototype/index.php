@@ -207,7 +207,8 @@ footer {
 
     <center>
         <a href="dashboard.php">Project Dashboard</a> |
-        <a href="review.php">Community Review</a> 
+        <a href="review.php">Community Review</a> |
+        <a href="submit.php">Submit a Proposal</a>
     </center>
 
     <form method="GET" class="filters">
