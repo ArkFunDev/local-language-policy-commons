@@ -292,6 +292,7 @@ $reviewPercentage = $totalProposals > 0
     <div class="links">
         <a href="index.php">Proposal Explorer</a>
         <a href="review.php">Community Review</a>
+        <a href="mediawiki.php">MediaWiki Explorer</a>
     </div>
 
     <p class="note">
