@@ -186,10 +186,10 @@ footer {
 </style>
 </head>
 
-<p>
+<!-- <p>
     <a href="dashboard.php">Project Dashboard</a> |
     <a href="review.php">Community Review</a>
-</p>
+</p> -->
     
 <body>
 
@@ -204,6 +204,11 @@ footer {
 </header>
 
 <main class="container">
+
+    <center>
+        <a href="dashboard.php">Project Dashboard</a> |
+        <a href="review.php">Community Review</a> 
+    </center>
 
     <form method="GET" class="filters">
 
