@@ -4,8 +4,10 @@
 
 ## Overview
 
-<img width="757" height="913" alt="image" src="https://github.com/user-attachments/assets/b45d8f63-d7c8-4e39-abc0-1107e186d797" />
-
+<img width="680" height="906" alt="image" src="https://github.com/user-attachments/assets/1701e9b4-809e-4281-b824-76277e4fec06" />
+<img width="605" height="814" alt="image" src="https://github.com/user-attachments/assets/97a4f678-f9fd-4ffa-9ef0-27e28c147943" />
+<img width="665" height="686" alt="image" src="https://github.com/user-attachments/assets/6de0897d-ad67-4d48-b3b4-90079724d715" />
+<img width="589" height="754" alt="image" src="https://github.com/user-attachments/assets/ebd0458a-f16b-4ea3-bbff-1ee9f18d11ce" />
 
 Local Language Policy Commons is a proposed open source platform designed to help young Indonesians explore, compare, and discover shared policy priorities across different local languages.
 The project aims to connect with BASAibu's MediaWiki infrastructure while preserving original language expressions, cultural context, and community ownership.
