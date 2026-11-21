@@ -50,7 +50,7 @@ check('every topic has a label in both languages', $topicsOk);
 // Every literal translation key used in the code must exist.
 $used = [];
 foreach (array_merge(glob(LLPC_ROOT . '/public/*.php'), glob(LLPC_ROOT . '/src/*.php')) as $file) {
-    if (preg_match_all("/\\b(?:th|t)\\(\\s*'([a-z_.]+)'/", file_get_contents($file), $m)) {
+    if (preg_match_all("/\\b(?:th|t)\\(\\s*'([a-z_.]+)'\\s*[,)]/", file_get_contents($file), $m)) {
         $used = array_merge($used, $m[1]);
     }
 }
