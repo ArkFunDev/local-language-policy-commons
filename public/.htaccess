@@ -1,0 +1,9 @@
+Options -Indexes
+DirectoryIndex index.php
+
+# Never serve hidden files (e.g. .git, .env) if the project is mounted under a web root.
+<FilesMatch "^\.(?!htaccess$)">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>

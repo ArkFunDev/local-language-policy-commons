@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      LLPC_MODERATOR_PASSWORD_HASH: ${LLPC_MODERATOR_PASSWORD_HASH:-}
+      LLPC_DEFAULT_LANG: ${LLPC_DEFAULT_LANG:-en}
+    volumes:
+      - llpc-storage:/var/www/app/storage
+    restart: unless-stopped
+
+volumes:
+  llpc-storage:

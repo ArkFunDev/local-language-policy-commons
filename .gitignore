@@ -1,2 +1,17 @@
-/prototype/reviews.json
-/prototype/submissions.json
+# Secrets and local configuration
+/config/config.local.php
+.env
+.env.*
+!.env.example
+
+# Runtime data (never commit real submissions, feedback, secrets or caches)
+/storage/*
+!/storage/.gitkeep
+!/storage/.htaccess
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

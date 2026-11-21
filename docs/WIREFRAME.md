@@ -1,73 +1,66 @@
-# Local Language Policy Commons - Wireframe
+# Screens and Wireframes
 
-## 1. Dashboard
+Each planned screen from the original concept now exists in the prototype. Page names refer to files in `public/`.
 
-**Purpose:** Provide an overview of multilingual policy proposals.
+| # | Screen | Page | Purpose |
+|---|---|---|---|
+| 1 | Dashboard | `dashboard.php` | Overview of the installation |
+| 2 | Proposal Explorer | `index.php` | Search and filter proposals across languages |
+| 3 | Proposal Detail | `proposal.php` | Original text, Indonesian reference, provenance, related proposals, approved feedback |
+| 4 | Similarity Explorer | `discovery.php` | Suggested related proposals with shared terms and review status |
+| 5 | Community Review | `review.php`, `verify.php`, `feedback-queue.php` | Moderator verification, acceptance and feedback moderation |
+| 6 | Submit | `submit.php` | Contributor submission with consent |
+| 7 | MediaWiki Explorer | `mediawiki.php` | Browse a wiki; import as pending |
+| 8 | Open Data | `export.php` | JSON / CSV download |
+| 9 | About | `about.php` | Purpose, status, AI role, privacy, licences |
 
-Planned interface :
-- Project title and navigation
-- Search proposals
-- Browse proposals by topic
-- Select language
-- View recently submitted proposals
+## Explorer (sketch)
 
-## 2. Proposal Explorer
+```
+┌────────────────────────────────────────────────────────────────────┐
+│ Local Language Policy Commons                           EN | ID    │
+│ Explorer · Topic Discovery · Submit · Dashboard · MediaWiki · Data │
+├────────────────────────────────────────────────────────────────────┤
+│ [Search…………]  [Language ▾]  [Topic ▾]  [Filter]                  │
+│ 6 results · samples and community submissions are labeled apart    │
+│ ┌────────────────────────────────────────────────────────────────┐ │
+│ │ P002  Javanese · Healthcare access                             │ │
+│ │ Warga desa butuh layanan kesehatan sing luwih cedhak…  (lang=jv)│ │
+│ │ Indonesian reference: Warga desa membutuhkan layanan…          │ │
+│ │ [Synthetic sample]                                             │ │
+│ └────────────────────────────────────────────────────────────────┘ │
+│                    ‹ Previous   Page 1 of 1   Next ›               │
+└────────────────────────────────────────────────────────────────────┘
+```
 
-**Purpose:** Help users discover policy proposals across local languages.
+## Proposal Detail / Similarity (sketch)
 
-Planned interface :
-- Original proposal text
-- Original language label
-- Topic category
-- Language assistance (when available)
-- Related proposal suggestions
+```
+Proposal SUB-1A2B3C4D          [Community] [Accepted] [Verification: Verified]
+Original (lang="min")  ……………………………………………………………
+Indonesian reference   ……………………………………………………………
+Source · Attribution · Submitted
+[ Give feedback or a correction ]
 
-## 3. Proposal Detail
+Potentially related proposals   (exploratory – never a ranking)
+  P003  Overlap score 100% · Suggestion — not yet reviewed
+  Shared terms: desa, layanan, kesehatan, …
+  Moderators only: [Confirm as related] [Reject suggestion] [Reset review]
+```
 
-**Purpose:** Preserve the original meaning and provide context.
+## User journey
 
-Planned interface :
-- Original proposal
-- Language information
-- Optional translated or explanatory content
-- Related proposals
-- Community feedback
+1. A contributor opens the platform and browses or searches proposals.
+2. They read proposals in their original languages, with the Indonesian reference alongside.
+3. The platform suggests potentially related proposals and shows *why*.
+4. Moderators and speakers review and confirm or reject suggestions.
+5. Contributors can send language corrections and cultural-context notes, which moderators approve before publication.
 
-## 4. Similarity Explorer
+## Design principles
 
-**Purpose:** Discover potentially related ideas across languages.
+- Preserve original language expressions.
+- Make multilingual exploration accessible (keyboard, screen reader, small screens, dark mode, no JavaScript).
+- Clearly distinguish automated suggestions from human decisions.
+- Prioritise transparency and community control.
 
-Planned interface :
-- Suggested related proposals
-- Similarity explanation
-- Original text comparison
-- Human review status
-
-Similarity suggestions are exploratory and do not represent automatic policy rankings.
-
-## 5. Community Review
-
-**Purpose:** Enable community members to validate automated suggestions.
-
-Planned interface :
-- Review suggested topic groupings
-- Confirm or reject suggestions
-- Submit corrections
-- Provide contextual feedback
-
-## User Journey
-
-1. A contributor opens the platform
-2. They browse or search policy proposal
-3. They explore proposals in their original languages
-4. The platform suggests potentially related topics
-5. Community members review and validate the suggestions
-
-## Design Principles
-
-- Preserve original language expressions
-- Make multilingual exploration accessible
-- Clearly distinguish automated suggestions from human decisions
-- Prioritize transparency and community control
-
-**Status:** Initial conceptual wireframe. Interface details will be refined through collaboration and user research with BASAibu and young contributors.
+**Status:** Implemented in the v0.2 prototype. Interface details will be refined through user research with BASAibu and young contributors.

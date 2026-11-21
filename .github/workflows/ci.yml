@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.4', '8.1', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, curl, json
+
+      - name: Lint PHP
+        run: find . -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - name: Validate JSON
+        run: |
+          for f in sample-data/*.json; do
+            php -r 'json_decode(file_get_contents($argv[1]), false, 512, JSON_THROW_ON_ERROR);' "$f"
+          done
+
+      - name: Run tests
+        run: php tests/run.php
+
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No secrets or runtime data committed
+        run: |
+          if git ls-files | grep -E '^(config/config\.local\.php|\.env|storage/.+\.(json|log|key))$'; then
+            echo "Sensitive or runtime files are tracked by git" && exit 1
+          fi

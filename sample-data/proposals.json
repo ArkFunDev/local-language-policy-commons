@@ -1,9 +1,8 @@
-
 {
   "dataset_name": "Local Language Policy Commons Demo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Synthetic multilingual policy proposal examples for development and testing.",
-  "notice": "All entries are fictional examples, not actual community submissions.",
+  "notice": "All entries are fictional examples written for development and testing. They are not community submissions and their local-language wording has NOT been reviewed by native speakers.",
   "proposals": [
     {
       "id": "P001",
@@ -13,7 +12,8 @@
       "indonesian_gloss": "Masyarakat desa membutuhkan layanan kesehatan yang lebih dekat dan terjangkau.",
       "suggested_topic": "healthcare_access",
       "review_status": "unreviewed",
-      "is_synthetic": true
+      "is_synthetic": true,
+      "linguistic_review": "not_reviewed"
     },
     {
       "id": "P002",
@@ -23,7 +23,8 @@
       "indonesian_gloss": "Warga desa membutuhkan layanan kesehatan yang lebih dekat dan terjangkau.",
       "suggested_topic": "healthcare_access",
       "review_status": "unreviewed",
-      "is_synthetic": true
+      "is_synthetic": true,
+      "linguistic_review": "not_reviewed"
     },
     {
       "id": "P003",
@@ -33,7 +34,8 @@
       "indonesian_gloss": "Warga desa membutuhkan layanan kesehatan yang lebih dekat dan terjangkau.",
       "suggested_topic": "healthcare_access",
       "review_status": "unreviewed",
-      "is_synthetic": true
+      "is_synthetic": true,
+      "linguistic_review": "not_reviewed"
     },
     {
       "id": "P004",
@@ -43,7 +45,8 @@
       "indonesian_gloss": "Anak-anak di desa membutuhkan akses internet yang lebih mudah untuk belajar.",
       "suggested_topic": "digital_education",
       "review_status": "unreviewed",
-      "is_synthetic": true
+      "is_synthetic": true,
+      "linguistic_review": "not_reviewed"
     },
     {
       "id": "P005",
@@ -53,7 +56,8 @@
       "indonesian_gloss": "Anak-anak di desa membutuhkan akses internet yang lebih mudah untuk belajar.",
       "suggested_topic": "digital_education",
       "review_status": "unreviewed",
-      "is_synthetic": true
+      "is_synthetic": true,
+      "linguistic_review": "not_reviewed"
     },
     {
       "id": "P006",
@@ -63,7 +67,9 @@
       "indonesian_gloss": "Anak-anak di desa membutuhkan akses internet yang lebih mudah untuk belajar.",
       "suggested_topic": "digital_education",
       "review_status": "unreviewed",
-      "is_synthetic": true
+      "is_synthetic": true,
+      "linguistic_review": "not_reviewed"
     }
-  ]
+  ],
+  "license": "CC BY 4.0"
 }

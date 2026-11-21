@@ -1,90 +1,107 @@
 # Local Language Policy Commons
 
-**An open source platform for multilingual civic participation and community-driven policy discovery.**
+[![CI](https://github.com/ArkFunDev/local-language-policy-commons/actions/workflows/ci.yml/badge.svg)](https://github.com/ArkFunDev/local-language-policy-commons/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
+![PHP 7.4+](https://img.shields.io/badge/PHP-7.4%2B-777bb4)
+![Status: prototype](https://img.shields.io/badge/status-working%20prototype-orange)
 
-## Overview
+**An open-source, human-in-the-loop tool for exploring policy proposals written in Indonesia's local languages — without flattening them into one language.**
 
-<img width="680" height="906" alt="image" src="https://github.com/user-attachments/assets/1701e9b4-809e-4281-b824-76277e4fec06" />
-<img width="605" height="814" alt="image" src="https://github.com/user-attachments/assets/97a4f678-f9fd-4ffa-9ef0-27e28c147943" />
-<img width="665" height="686" alt="image" src="https://github.com/user-attachments/assets/6de0897d-ad67-4d48-b3b4-90079724d715" />
-<img width="589" height="754" alt="image" src="https://github.com/user-attachments/assets/ebd0458a-f16b-4ea3-bbff-1ee9f18d11ce" />
+🇮🇩 [Baca dalam Bahasa Indonesia](README.id.md)
 
-Local Language Policy Commons is a proposed open source platform designed to help young Indonesians explore, compare, and discover shared policy priorities across different local languages.
-The project aims to connect with BASAibu's MediaWiki infrastructure while preserving original language expressions, cultural context, and community ownership.
+## Why this exists
 
-## The Problem
+Young people across Indonesia write policy proposals in their own local languages. The volume and linguistic diversity make it hard to see where proposals overlap, who is raising similar concerns, and which ideas deserve a closer look. Most digital tools assume one dominant language and ask communities to translate themselves.
 
-Local language communities often face barriers when participating in digital civic discussions.
-Differences in language and terminology can make it difficult to understand, compare, and connect ideas across regions.
-Digital tools should support linguistic diversity rather than require communities to abandon their original expressions.
+Local Language Policy Commons takes the opposite approach:
 
-## Project Objectives
+- **Original wording is the source of truth.** Every proposal is shown in its original language, with an Indonesian reference text alongside it, never instead of it.
+- **Software suggests, people decide.** Cross-language topic suggestions are exploratory. Moderators and speakers confirm or reject each one, and the interface always shows which is which.
+- **No ranking of ideas.** The system never scores policy importance or "popularity".
+- **Transparent by default.** Every suggestion lists the exact terms that produced it.
 
-- Make multilingual policy proposals easier to explore
-- Preserve original language content and meaning
-- Identify potentially related topics across languages
-- Enable community members to review and correct automated suggestions
-- Support inclusive and community driven civic participation
+The project is an independent effort aligned with the mission of [BASAibu](https://basabali.org), a community-governed platform for youth civic participation in local languages. It is **not** an official BASAibu product unless and until stated otherwise.
 
-## Planned Features
+## Current status — working prototype (v0.2)
 
-1. **MediaWiki Integration** - Retrieve community-generated proposals through the MediaWiki API
-2. **Original Language Views** - Display proposals while preserving their original expressions
-3. **Multilingual Assistance** - Support users in exploring content across languages
-4. **Topic Similarity** - Suggest potentially related proposals across linguistic communities
-5. **Human Review** - Allow community members to validate and correct automated suggestions
+This repository contains a functioning prototype you can run in a minute. Please read the honest summary below.
 
-AI will assist with discovery and exploration, not determine policy priorities or replace human judgment.
+**What works today**
 
-## Technology Stack
+| Area | Capability |
+|---|---|
+| Explore | Search, filter by language/topic, paginated explorer; per-proposal detail pages with `lang` attributes for correct screen-reader pronunciation |
+| Submit | Public submission form with 22 language options, topic list, source attribution, explicit licence consent, honeypot and rate limiting |
+| Moderate | Moderator login (rate-limited), source verification, review/accept workflow, feedback moderation queue, audit log |
+| Discover | Transparent word-overlap suggestions with shared terms shown; moderators can confirm or reject each suggested pair |
+| Integrate | Read-only MediaWiki API client (HTTPS, cached, descriptive User-Agent); moderators can import a wiki page as a *pending* submission |
+| Open data | Public JSON/CSV export of accepted, consented records (CSV is protected against formula injection) |
+| Quality | Bilingual UI (English / Bahasa Indonesia), accessible markup, dark mode, no JavaScript, strict Content-Security-Policy, automated tests and CI |
 
-Initial technologies under consideration :
+**What is *not* claimed**
 
-- Backend : PHP
-- Database : MySQL
-- Integration : MediaWiki API / REST API
-- Frontend : HTML, CSS, JavaScript
-- Language Processing : Multilingual text processing and semantic similarity tools
+- No production deployment and no real users. Figures in the dashboard describe only the local installation.
+- The 6 sample proposals are **synthetic**; their local-language wording has **not** been reviewed by native speakers.
+- Similarity currently uses a simple, transparent **word-overlap baseline on the Indonesian reference text**. It is *not* a machine-learning model. Evaluating small, privacy-preserving multilingual models — and measuring how they perform across languages — is planned work (see [docs/EVALUATION-PLAN.md](docs/EVALUATION-PLAN.md)).
+- Storage is JSON files with one shared moderator password. That is fine for a prototype, not for production with sensitive data (see [SECURITY.md](SECURITY.md) and [docs/SYSTEM-ARCHITECTURE.md](docs/SYSTEM-ARCHITECTURE.md)).
 
-The final technology choices will be refined through research and collaboration with BASAibu.
+## Quick start
 
-## Development Roadmap
+Requirements: PHP 7.4+ with the `json`, `mbstring` and `curl` extensions. No Composer, no database.
 
-| Phase | Focus
+```bash
+git clone https://github.com/ArkFunDev/local-language-policy-commons.git
+cd local-language-policy-commons
 
-| Q1    | Research, collaboration, and system design
+php bin/set-moderator-password.php     # creates config/config.local.php (git-ignored)
+php tests/run.php                       # optional: run the test suite
+php -S localhost:8000 -t public         # start the app
+```
 
-| Q2    | MediaWiki integration and core development
+Open <http://localhost:8000>. Moderator tools: <http://localhost:8000/login.php>.
 
-| Q3    | Topic similarity and human review
+**Docker:** `cp .env.example .env`, put your password hash in it, then `docker compose up --build`. See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for Docker, XAMPP, Apache, nginx and the production hardening checklist.
 
-| Q4    | Community testing, validation, and open release
+## Repository layout
 
-## Current Status
+```
+public/          Web root: pages and assets (the only directory that should be served)
+src/             Application code (config, storage, security, i18n, proposals, similarity, MediaWiki)
+lang/            UI strings: en.php, id.php
+config/          config.example.php  (copy to config.local.php — never commit it)
+storage/         Runtime data (git-ignored; keep outside the web root in production)
+sample-data/     Synthetic demo proposals
+bin/             Command-line helpers
+tests/           Test runner (php tests/run.php)
+docs/            Architecture, deployment, MediaWiki integration, responsible AI, evaluation plan, fellowship reference
+```
 
-**Concept and Early Design Stage**
+## Documentation
 
-This repository currently contains the project's initial documentation and development direction. No production deployment or active users are claimed at this stage.
+- [System architecture](docs/SYSTEM-ARCHITECTURE.md) — components, data model, security model, prototype vs. planned
+- [Wireframes and screens](docs/WIREFRAME.md)
+- [MediaWiki integration](docs/MEDIAWIKI-INTEGRATION.md)
+- [Responsible AI statement](docs/RESPONSIBLE-AI.md)
+- [Evaluation plan](docs/EVALUATION-PLAN.md)
+- [Deployment guide](docs/DEPLOYMENT.md)
+- [Roadmap](ROADMAP.md) · [Changelog](CHANGELOG.md)
+- [Privacy](PRIVACY.md) · [Security policy](SECURITY.md)
+- [Mozilla Fellowship application reference](docs/MOZILLA-FELLOWSHIP.md)
 
-## Guiding Principles
+## Guiding principles
 
-- Linguistic diversity and inclusion
-- Community ownership and human oversight
-- Transparency and responsible AI
-- Open source development
-- Public interest technology
+Linguistic diversity and inclusion · Community ownership and human oversight · Transparency and responsible AI · Privacy by design · Open source and open data · Public-interest technology
 
-## Open Development
+## Contributing
 
-This project aims to develop reusable open-source tools, documentation, and learning resources for multilingual civic participation.
-Community collaboration and feedback will help shape its development.
+Contributions are welcome — especially from **native speakers** of Indonesian local languages, accessibility reviewers and PHP developers. Please read [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md). To report a language error, use the *Language correction* issue template.
 
-## Acknowledgement
+## Licence
 
-Proposed as an independent public interest technology project aligned with the mission of BASAibu.
+- **Source code:** [MIT](LICENSE)
+- **Documentation and synthetic sample data:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- **Community-submitted proposals:** published under the data licence configured by each installation (default CC BY 4.0), as agreed by contributors when they submit.
 
 ---
 
-**Project:** Local Language Policy Commons  
-**Developer:** Helmy Ashari  
-**GitHub:** [@ArkFunDev](https://github.com/ArkFunDev)
+**Developer:** Helmy Ashari · **GitHub:** [@ArkFunDev](https://github.com/ArkFunDev)

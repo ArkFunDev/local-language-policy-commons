@@ -1,90 +1,86 @@
-# Project Roadmap - Local Language Policy Commons
+# Roadmap — Local Language Policy Commons
 
-## Project Duration
+**Project duration (proposed):** 12 months, June 2027 – May 2028, aligned with a host-organisation partnership with BASAibu. Dates and scope will be confirmed with BASAibu.
 
-12 Months - June 2027 to May 2028
+## Foundation work — completed (prototype v0.2, November 2026)
 
-## Quarter 1 : Research and Design
-**June - August 2027**
+Working prototype, independently developed before any partnership: explorer, detail pages, submission with consent, moderation workflow, MediaWiki read-only client, transparent similarity baseline with pair review, open-data export, bilingual accessible interface, security hardening, tests and CI, and full documentation. See [CHANGELOG.md](CHANGELOG.md).
 
-Objectives :
-- Collaborate with BASAibu and young contributors
-- Understand existing MediaWiki workflows and data structures
-- Conduct user research and identify community needs
-- Design initial wireframes and system architecture
+## Quarter 1 — Research and design
+**June – August 2027**
 
-Expected Deliverables :
+Objectives
+- Work with BASAibu and young contributors; learn the real wiki workflows and data structures
+- Run user research; identify needs, languages and moderation capacity
+- Agree data licence, privacy and moderation rules with BASAibu
+- Finalise the evaluation protocol
+
+Deliverables
 - User research summary
-- MediaWiki integration plan
-- Initial wireframes
-- Technical architecture documentation
+- MediaWiki integration plan (see [docs/MEDIAWIKI-INTEGRATION.md](docs/MEDIAWIKI-INTEGRATION.md))
+- Updated wireframes and architecture
+- Evaluation protocol
 
-## Quarter 2 : Core Development
-**September - November 2027**
+## Quarter 2 — Core development
+**September – November 2027**
 
-Objectives :
-- Develop MediaWiki API integration
-- Build original-language proposal views
-- Implement multilingual assistance
-- Develop the PHP/MySQL backend
-- Establish data validation and security mechanisms
+Objectives
+- Integrate with BASAibu's MediaWiki structure
+- Move storage to a database; per-moderator accounts and roles
+- Strengthen validation and security; independent security review
+- Measure the baseline per language
 
-Expected Deliverables :
-- Functional application prototype
-- MediaWiki data retrieval workflow
-- Initial proposal exploration interface
-- Technical documentation
+Deliverables
+- Integrated application running against BASAibu's wiki (staging)
+- Database-backed storage and migration scripts
+- Security review report and fixes
+- Baseline measurements
 
-## Quarter 3 : Similarity and Human Review
-**December 2027 - February 2028**
+## Quarter 3 — Similarity and human review
+**December 2027 – February 2028**
 
-Objectives :
-- Implement topic similarity suggestions
-- Develop human correction and feedback workflows
+Objectives
+- Evaluate candidate open, locally-run multilingual models against the baseline, language by language
+- Build the community review interface for suggestions and language corrections
 - Test with contributors from different language communities
 - Evaluate linguistic representation and potential AI bias
 
-Expected Deliverables :
-- Topic similarity prototype
+Deliverables
+- Evaluation report with per-language results, including negative findings
 - Community review interface
-- Initial testing and evaluation report
-- Documented feedback and improvements
+- Model cards for any model proposed for use (or a documented decision not to use one)
 
-## Quarter 4 : Validation and Open Release
-**March - May 2028**
+## Quarter 4 — Validation and open release
+**March – May 2028**
 
-Objectives :
-- Conduct community usability testing
-- Refine the platform based on feedback
-- Publish open source code and documentation
-- Prepare a long-term maintenance roadmap
+Objectives
+- Community usability and accessibility testing
+- Refine based on feedback
+- Publish code, documentation, and (where consented) an open dataset
+- Prepare long-term maintenance with BASAibu
 
-Expected Deliverables :
-- Validated working prototype
-- Open-source project repository
-- User and technical documentation
+Deliverables
+- Validated working system
+- Public release with user and technical documentation
 - Final evaluation report
-- Maintenance and sustainability plan
+- Maintenance and sustainability plan, with handover to BASAibu
 
-## Success Indicators
+## Success indicators
 
-Project progress will be evaluated through :
+Progress is measured by:
 
-- Successful MediaWiki API integration
-- Reliable retrieval and preservation of original-language proposals
-- Functional topic similarity suggestions
-- Community participation in reviewing and correcting suggestions
-- Documented usability feedback
-- Public release of reusable code and documentation
+- Integration with BASAibu's wiki running reliably, with original-language text preserved
+- Reviewers confirming or rejecting suggestions in real use
+- Published per-language evaluation results
+- Documented usability and accessibility feedback
+- Public release of reusable code, documentation and data
 
-Quantitative targets will be established with BASAibu after initial research and community consultation.
+Quantitative targets will be set with BASAibu after Q1 research. *Proposed starting points, to be confirmed:* at least five local languages reviewed by at least two native or bilingual reviewers each; every adopted AI feature accompanied by published per-language results.
 
-## Long Term Vision
+## Long-term vision
 
-Establish reusable, open-source public interest infrastructure that helps multilingual communities participate in civic discussions while maintaining control over their language, knowledge, and priorities.
+Reusable, open-source public-interest infrastructure that helps multilingual communities take part in civic discussion while keeping control over their language, knowledge and priorities.
 
 ---
 
-**Project:** Local Language Policy Commons  
-**Developer:** Helmy Ashari  
-**Development Status:** Proposed – Concept and Early Design Stage
+**Project:** Local Language Policy Commons · **Developer:** Helmy Ashari · **Status:** Working prototype (v0.2); partnership and funding proposed.
