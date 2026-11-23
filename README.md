@@ -24,6 +24,34 @@ The project is an independent effort aligned with the mission of [BASAibu](https
 
 ## Current status — working prototype (v0.2)
 
+## Screenshots
+
+> Demo data is synthetic. Screenshots show the v0.2 prototype.
+
+### Explore and discover
+
+| | |
+|---|---|
+| ![Proposal explorer with language and topic filters](docs/screenshots/01-explorer.jpg) | ![Proposal detail with original text and Indonesian reference](docs/screenshots/02-proposal-detail.jpg) |
+| **Explore** proposals in their original languages | **Detail:** original wording first, Indonesian as reference |
+| ![Suggested related proposals with shared terms](docs/screenshots/03-discovery.jpg) | ![Moderator confirming or rejecting a suggested pair](docs/screenshots/04-discovery-moderator.jpg) |
+| **Explainable suggestions** show the shared terms | **Humans decide:** confirm or reject each pair |
+
+### Contribute and moderate
+
+| | |
+|---|---|
+| ![Submission form with consent checkbox](docs/screenshots/05-submit.jpg) | ![Source verification screen for moderators](docs/screenshots/06-verify.jpg) |
+| **Submit** with explicit licence consent | **Verify** source, attribution and language meaning |
+| ![Community review screen with accept and revise options](docs/screenshots/07-review.jpg) | ![Feedback moderation queue with approve and reject buttons](docs/screenshots/08-feedback-queue.jpg) |
+| **Review:** only accepted submissions become public | **Feedback is moderated** before it appears publicly |
+
+### Overview
+
+![Dashboard with review progress](docs/screenshots/09-dashboard.jpg)
+
+**Dashboard** for the installation: review progress and counts by language.
+
 This repository contains a functioning prototype you can run in a minute. Please read the honest summary below.
 
 **What works today**

@@ -24,6 +24,34 @@ Proyek ini adalah upaya independen yang selaras dengan misi [BASAibu](https://ba
 
 ## Status saat ini — prototipe berfungsi (v0.2)
 
+## Tangkapan layar
+
+> Data demo bersifat sintetis. Gambar menunjukkan prototipe v0.2.
+
+### Jelajah dan temukan
+
+| | |
+|---|---|
+| ![Penjelajah usulan dengan filter bahasa dan topik](docs/screenshots/01-explorer.jpg) | ![Detail usulan dengan teks asli dan rujukan Indonesia](docs/screenshots/02-proposal-detail.jpg) |
+| **Jelajahi** usulan dalam bahasa aslinya | **Detail:** redaksi asli lebih dulu, Bahasa Indonesia sebagai rujukan |
+| ![Saran usulan terkait dengan kata yang sama](docs/screenshots/03-discovery.jpg) | ![Moderator mengonfirmasi atau menolak pasangan usulan](docs/screenshots/04-discovery-moderator.jpg) |
+| **Saran yang dapat dijelaskan** menampilkan kata bersama | **Manusia memutuskan:** konfirmasi atau tolak tiap pasangan |
+
+### Berkontribusi dan moderasi
+
+| | |
+|---|---|
+| ![Formulir kiriman dengan kotak persetujuan](docs/screenshots/05-submit.jpg) | ![Layar verifikasi sumber untuk moderator](docs/screenshots/06-verify.jpg) |
+| **Kirim** dengan persetujuan lisensi yang eksplisit | **Verifikasi** sumber, atribusi, dan makna bahasa |
+| ![Layar tinjauan komunitas dengan pilihan terima dan revisi](docs/screenshots/07-review.jpg) | ![Antrean moderasi masukan dengan tombol setujui dan tolak](docs/screenshots/08-feedback-queue.jpg) |
+| **Tinjau:** hanya kiriman yang diterima yang tampil publik | **Masukan dimoderasi** sebelum tampil di publik |
+
+### Ringkasan
+
+![Dasbor dengan kemajuan tinjauan](docs/screenshots/09-dashboard.jpg)
+
+**Dasbor** instalasi ini: kemajuan tinjauan dan jumlah menurut bahasa.
+
 Repositori ini berisi prototipe yang berjalan dan bisa dicoba dalam satu menit. Mohon baca ringkasan jujur berikut.
 
 **Yang sudah berfungsi**
